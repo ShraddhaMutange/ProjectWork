@@ -1,0 +1,216 @@
+Step 1: Login to AWS 
+Open:
+AWS Console
+Login using your AWS account.
+
+Step 2: Open EC2 Service 
+In AWS search bar type: 
+EC2
+Click:
+EC2
+
+Step 3: Launch EC2 Instance 
+Click:
+Launch Instance
+
+Step 4: Configure EC2 Instance
+
+4.1	Name 
+Enter:
+EcommerceWebsite
+
+
+
+4.2	Select Ubuntu Image 
+Choose:
+Ubuntu Server 24.04 LTS
+(Free Tier Eligible)
+
+
+4.3	Choose Instance Type 
+Select:
+t2.micro
+
+(Free Tier Eligible)
+4.4	Create Key Pair 
+Click:
+Create new key pair
+Enter: 
+ecommerce-key 
+Choose:
+?	Type = RSA
+
+
+   ?	Format = .pem 
+Click:
+Create key pair
+
+.pem file will download automatically.
+
+
+
+4.5	Configure Network Settings 
+Click:
+Edit 
+Enable:
+Allow SSH traffic 
+Allow HTTP traffic
+
+
+
+Step 5: Launch Instance 
+Click:
+Launch Instance
+Wait until instance state becomes:
+Running
+
+
+
+Step 6: Connect to EC2 Instance
+
+6.1	Select Instance 
+Tick/select your instance. 
+Click:
+Connect
+6.2	Use EC2 Instance 
+Connect Choose tab:
+EC2 Instance Connect
+
+Click:
+Connect
+A browser terminal will open.
+
+
+
+Step 7: Update Ubuntu Packages 
+Run:
+
+
+sudo apt update
+Wait for completion.
+
+
+
+Step 8: Install Apache Web 
+Server Run:
+sudo apt install apache2 -y
+Wait for installation to complete.
+
+
+
+Step 9: Start Apache Service 
+Run:
+sudo systemctl start apache2
+
+
+
+Step 10: Enable Apache Service 
+Run:
+sudo systemctl enable apache2
+
+
+
+Step 11: Verify Apache Installation 
+Go to EC2 Dashboard.
+Copy:
+
+Public IPv4 Address 
+Open browser: 
+http://PUBLIC_IP 
+You should see:
+Apache2 Ubuntu Default Page
+This confirms Apache server is working.
+
+
+
+Step 12: Download Ecommerce Website Template 
+Open website:
+Free Website Templates
+
+Download any Ecommerce Website template ZIP 
+file. Example:
+?	Shopping website
+?	Fashion store
+?	Online store template
+
+
+Extract ZIP file on your computer.
+The extracted folder will contain:
+?	index.html
+?	css folder
+?	js folder
+?	images folder
+
+
+
+Step 13: Upload Website Files to EC2 
+Inside EC2 terminal run:
+cd /var/www/html
+Remove default Apache page:
+sudo rm index.html
+Step 14: Upload Ecommerce Website Files
+
+
+
+In Windows Command Prompt
+
+
+
+C:\Users\Dell\Downloads\rehabilitation-yoga\rehabilitation-yoga\upload
+
+
+
+dir
+
+
+
+scp -i "C:\Users\Dell\Downloads\ecommerce-key.pem" -r * ubuntu@paste_public_ip:/home/ubuntu
+
+
+
+INSIDE EC2
+
+
+
+cd /home/ubuntu
+
+
+
+Ls
+
+
+Sudo mv * /var/www/html
+
+
+
+Sudo systemctl restart apache2
+
+
+
+Open browser!! refresh!!
+
+
+http://PUBLIC_IP
+Example:
+http://13.xx.xx.xx
+Your Ecommerce Website will open successfully.
+
+
+
+Common Mistakes (IMPORTANT)
+?	Not opening port 80 ? Website won't load
+?	Not deleting default index.html
+?	Wrong folder copy
+   ?	Instance stopped ? site not accessible 
+Viva Questions You Might Get
+What is EC2?
+? Virtual server in cloud
+
+What is Apache?
+? Web server to host websites
+
+What is Public IP?
+? Address to access your server from internet
+
+What is key pair?
+? Used for secure login (SSH)

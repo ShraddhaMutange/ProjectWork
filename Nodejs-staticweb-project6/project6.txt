@@ -1,0 +1,295 @@
+Step 1: Install Required Software on Local 
+System  
+1.1 Install Node.js  
+Download and install Node.js LTS 
+version:  Node.js OUicial Website 
+Verify installation:  
+node -v  
+npm -v  
+1.2 Install Visual Studio Code  
+Download:  
+Visual Studio Code 
+1.3 Install Git  
+Download:  
+Git OUicial Website 
+Verify installation:  
+git --version  
+Step 2: Create Node.js Project  
+2.1 Create Project Folder  
+Open terminal and run:  
+mkdir node-static-app  
+Go inside folder:  
+cd node-static-app  
+2.2 Initialize Node.js Project  
+Run:  
+npm init -y  
+This creates package.json.  
+2.3 Install Express Framework  
+Run:  
+npm install express  
+Step 3: Create Project Files  
+Create folder:  
+public  
+Create files:  
+? server.js  
+? public/index.html 
+
+
+
+Project structure:  
+node-static-app  
+¦  
++-- public  
+¦ +-- index.html  
+¦  
++-- server.js  
++-- package.json  
++-- package-lock.json  
+Step 4: Add HTML Code  
+Open:  
+public/index.html  
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+ <meta charset="UTF-8">  
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+<title>Smart Library Portal</title>  
+ <style>  
+ *{  
+ margin:0;  
+ padding:0;  
+ box-sizing:border-box;  
+ font-family:Arial, sans-serif;  
+ }  
+ body{  
+ background:#f4f6f9;  
+ color:#333;  
+ }  
+ header{  
+ background:#1e3a5f;  
+ color:white;  
+ padding:20px;  
+ text-align:center;  
+ }  
+ nav{  
+ background:#16324f;  
+ padding:15px;  
+ text-align:center; 
+ }  
+ nav a{  
+ color:white;  
+ text-decoration:none;  
+ margin:0 15px;  
+ font-weight:bold;  
+ }  
+ .hero{  
+ height:400px;  
+ background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),   
+url('https://images.unsplash.com/photo-1521587760476- 
+6c12a4b040da?q=80&w=1200&auto=format&fit=crop');   
+background-size:cover;  
+ background-position:center;  
+ display:flex;  
+ justify-content:center;  
+ align-items:center;  
+ color:white;  
+ text-align:center;  
+ }  
+ .hero h1{  
+ font-size:50px;  
+ margin-bottom:15px;  
+ }  
+ .hero p{  
+ font-size:20px;  
+ }  
+ .section{  
+ padding:50px 10%;  
+ }  
+ .cards{  
+ display:grid;  
+ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));   
+gap:20px;  
+ margin-top:30px;  
+ }  
+ .card{  
+ background:white; 
+ padding:25px;  
+ border-radius:10px;  
+ box-shadow:0 4px 10px rgba(0,0,0,0.1);   
+transition:0.3s;  
+ }  
+ .card:hover{  
+ transform:translateY(-5px);  
+ }  
+ footer{  
+ background:#1e3a5f;  
+ color:white;  
+ text-align:center;  
+ padding:20px;  
+ margin-top:30px;  
+ }  
+ button{  
+ margin-top:20px;  
+ padding:12px 25px;  
+ border:none;  
+ background:#U9800; 
+ color:white;  
+ font-size:16px;  
+ border-radius:5px;  
+ cursor:pointer;  
+ }  
+ button:hover{  
+ background:#e68900;  
+ }  
+ </style>  
+</head>  
+<body>  
+ <header>  
+ <h1>Smart Library Portal</h1>   
+<p>Node.js Static Website Project</p>   
+</header>  
+ <nav>  
+ <a href="#">Home</a>  
+ <a href="#">Books</a> 
+ <a href="#">Services</a>  
+ <a href="#">Contact</a>  
+ </nav>  
+ <section class="hero">  
+ <div>  
+ <h1>Welcome to Smart Library</h1>  
+ <p>Access thousands of books and digital resources</p>   
+<button>Explore Library</button>  
+ </div>  
+ </section>  
+ <section class="section">  
+ <h2>Our Services</h2>  
+ <div class="cards">  
+ <div class="card">  
+ <h3>Digital Library</h3>  
+ <p>Read e-books, journals, and research papers online.</p>   
+</div>  
+ <div class="card">  
+ <h3>Book Management</h3>  
+ <p>Manage issued books and student records eUiciently.</p>  
+</div>  
+ <div class="card">  
+ <h3>24/7 Access</h3>  
+ <p>Students can access learning resources anytime.</p>   
+</div>  
+ </div>  
+ </section>  
+ <footer>  
+ <p>(c) 2026 Smart Library Portal | Hosted using Node.js & AWS EC2</p>   
+</footer>  
+</body>  
+</html>  
+Step 5: Add Server Code  
+Open:  
+server.js 
+const express = require('express');  
+const path = require('path');  
+const app = express();  
+app.use(express.static(path.join(__dirname, 'public')));  
+const PORT = 3000;  
+app.listen(PORT, () => {  
+ console.log(`Server running on port ${PORT}`);  
+});  
+Step 6: Run Application Locally  
+Run:  
+node server.js  
+Output:  
+Server running on port 3000  
+Open browser:  
+http://localhost:3000  
+Static website will open.  
+Step 7: Upload Project to GitHub  
+Initialize Git  
+git init  
+git add .  
+git commit -m "Initial commit"  
+git branch -M main  
+Create GitHub Repository  
+Open:  
+GitHub 
+Create repository:  
+node-static-app  
+
+Connect GitHub Repository  
+Run:  
+git remote add origin https://github.com/YOUR_USERNAME/node-static-app.git  
+Push code:  
+git push -u origin main  
+Step 8: Launch AWS EC2 Instance  
+Open AWS Console:  
+AWS Console 
+Search: 
+EC2  
+Click:  
+Launch Instance  
+Step 9: Configure EC2 Instance  
+Name  
+NodeStaticWebsite  
+AMI  
+Choose:  
+Ubuntu Server 24.04 LTS  
+Instance Type  
+t2.micro  
+Key Pair  
+Create:  
+node-key  
+Network Settings  
+Enable:  
+Allow SSH traffic 
+Allow HTTP traffic 
+Launch instance.  
+Wait until instance state becomes:  
+Running  
+Step 10: Connect to EC2  
+Select instance.  
+Click:  
+Connect  
+Choose:  
+EC2 Instance Connect  
+Click:  
+Connect  
+Browser terminal will open.  
+Step 11: Install Node.js on EC2  
+Run:  
+sudo apt update  
+Run:  
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - 
+Run:  
+sudo apt install -y nodejs  
+Verify installation:  
+node -v  
+npm -v  
+Step 12: Clone GitHub Repository  
+Run:  
+git clone https://github.com/YOUR_USERNAME/node-static-
+app.git  
+Go inside project:  
+cd node-static-app  
+Step 13: Install Dependencies  
+Run:  
+npm install  
+Step 14: Start Node.js Application  
+Run:  
+node server.js  
+Output:  
+Server running on port 3000  
+Keep terminal open.  
+Step 15: Configure Security Group for Port 3000  
+Go to:  
+EC2 ? Security Groups  
+Edit inbound rules.  
+Add:  
+Type Port Source 
+Custom TCP 3000 Anywhere IPv4 
+Save rules.  
+Step 16: Open Website Publicly  
+Copy EC2 Public IPv4 Address.  
+Open browser:  
+http://PUBLIC_IP:3000  
+Example:  
+http://13.xx.xx.xx:3000  
+Your Node.js static website will open successfully. 

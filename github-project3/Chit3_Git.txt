@@ -1,0 +1,183 @@
+Git Chit
+
+
+git --version
+
+mkdir myapp
+cd myapp
+
+git init
+
+git status
+
+git add .
+
+git commit -m "First Commit"
+
+git log
+
+git branch -M main
+
+git remote add origin https://github.com/username/myapp.git
+
+git push -u origin main
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aim
+Create a GitHub account, create a repository, make a simple application, and push the code to GitHub 
+using Git commands.
+ 
+STEP 1 - Create GitHub Account
+Open:
+GitHub Official Website
+1.	Click Sign Up
+2.	Enter:
+?	Email
+?	Password
+?	Username
+3.	Verify account
+4.	Login to GitHub
+ 
+STEP 2 - Create New Repository
+After login:
+1.	Click + (top right)
+2.	Click New repository
+3.	Repository name: 
+ 
+ myapp 
+
+4.	Keep:
+?	Public ?
+?	Add README ? (unchecked)
+5.	Click Create repository
+You will see repository URL like:
+https://github.com/username/myapp.git
+ 
+STEP 3 - Open Ubuntu Terminal / Vagrant VM
+Go inside Ubuntu terminal.
+ 
+STEP 4 - Install Git
+sudo apt update
+sudo apt install git -y
+Check installation:
+git --version
+ 
+STEP 5 - Configure Git (First Time Only)
+git config --global user.name "YourName"
+git config --global user.email "yourmail@gmail.com"
+Check:
+git config --list
+ 
+STEP 6 - Create Project Folder
+mkdir myapp
+cd myapp
+ 
+STEP 7 - Create Simple Application
+Create HTML file:
+nano index.html
+Paste:
+<!DOCTYPE html>
+<html>
+<head>
+   <title>My App</title>
+</head>
+<body>
+   <h1>Hello GitHub</h1>
+</body>
+</html>
+Save:
+?	CTRL + O ? Enter
+?	CTRL + X
+ 
+STEP 8 - Initialize Git Repository
+git init
+ 
+STEP 9 - Add Files
+git add .
+ 
+STEP 10 - Commit Files
+git commit -m "First commit"
+ 
+STEP 11 - Connect Local Repo to GitHub
+Copy repository URL from GitHub.
+Command:
+git remote add origin https://github.com/username/myapp.git
+Example:
+git remote add origin https://github.com/shraddha/myapp.git
+ 
+STEP 12 - Push Code to GitHub
+git branch -M main
+git push -u origin main
+It may ask:
+?	GitHub username
+?	Password/token
+STEP 13 - Verify on GitHub
+Refresh GitHub repository page.
+You should see:
+?	index.html
+?	commit message
+Successfully uploaded.
+SHORT PRACTICAL FLOW (Easy to Remember)
+sudo apt install git -y
+
+git config --global user.name "Name"
+git config --global user.email "mail@gmail.com"
+
+mkdir myapp
+cd myapp
+
+nano index.html
+
+git init
+git add .
+git commit -m "first commit"
+
+git remote add origin REPO_URL
+
+git branch -M main
+git push -u origin main
+Important Viva Questions
+1. What is Git?
+Git is a distributed version control system.
+2. What is GitHub?
+GitHub is a cloud platform used to host Git repositories.
+3. Difference between Git and GitHub?
+?	Git ? Version control tool
+?	GitHub ? Online hosting service for Git repositories
+4. What does git init do?
+Initializes a local Git repository.
+5. What does git add . do?
+Adds all files to the staging area.
+6. What does git commit do?
+Saves snapshot/version of project.
+7. What does git push do?
+Uploads local code to GitHub repository.
+8. What is a repository?
+A storage location for project files and versions.
+

@@ -1,0 +1,90 @@
+Step 1: 
+?	Make a folder named FileTransfer
+?	Open this path in cmd
+Step 2: 
+Now run:  
+vagrant init ubuntu/jammy64
+This will create a Vagrantfile 
+Open it and replace its content with: 
+ 
+Vagrant.configure("2") do |config|
+
+  # =========================
+  # VM 1
+  # =========================
+  config.vm.define "vm1" do |vm1|
+    vm1.vm.box = "ubuntu/jammy64"
+    vm1.vm.hostname = "vm1"
+
+    vm1.vm.network "private_network", ip: "192.168.33.10"
+
+    vm1.vm.provider "virtualbox" do |vb|
+      vb.name = "VM1"
+      vb.memory = 1024
+      vb.cpus = 1
+    end
+  end
+
+  # =========================
+  # VM 2
+  # =========================
+  config.vm.define "vm2" do |vm2|
+    vm2.vm.box = "ubuntu/jammy64"
+    vm2.vm.hostname = "vm2"
+
+    vm2.vm.network "private_network", ip: "192.168.33.11"
+
+    vm2.vm.provider "virtualbox" do |vb|
+      vb.name = "VM2"
+      vb.memory = 1024
+      vb.cpus = 1
+    end
+  end
+
+end
+
+Save & close
+Step 3: on terminal run: 
+vagrant up
+
+Step 4: on same terminal (lets call this terminal 1)
+vagrant ssh vm1
+ip a
+
+And open another terminal (lets call this terminal 2) and run:
+vagrant ssh vm2
+ip a
+
+Step 5: on terminal 1 create s text file:
+
+?	cat > test.txt
+(type)
+Hello this is VM1!
+(ctrl+d)
+
+?	Run: 
+ssh-keygen
+?	ls .ssh
+?	cat .ssh/id_rsa.pub
+Copy whole key
+
+Step 6: On terminal 2:
+?	cat > .ssh/authorized_keys
+(paste copied key)
+?	Check: cat .ssh/authorized_keys
+?	chmod 700 .ssh
+?	chmod 600 .ssh/authorized_keys
+
+Step 7: On terminal 1
+Send test.txt to another vm
+For vm1 to vm2:
+scp text.txt vagrant@192.168.33.11:/home/vagrant
+
+Step 8: On terminal 2: 
+Check if file is received 
+ls 
+cat test.txt
+
+
+
+

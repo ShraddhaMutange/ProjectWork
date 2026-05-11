@@ -1,0 +1,719 @@
+WAD+CC Viva QnA
+1.	HTML / CSS / Bootstrap Viva 
+Basic HTML Questions
+Q1. What is HTML?
+HTML stands for HyperText Markup Language. 
+It is used to create the structure of web pages.
+
+Q2. What are HTML tags?
+Tags are predefined keywords enclosed in angle brackets used to define webpage elements. 
+Example:
+<h1>Hello</h1>
+<p>Paragraph</p>
+
+Q3. Difference between HTML and HTML5? 
+HTML	HTML5
+Older version	Latest version
+No semantic tags	Semantic tags available 
+No audio/video support Supports audio/video 
+Uses plugins	Native multimedia support
+
+Q4. What are semantic tags?
+Semantic tags clearly describe their meaning. 
+Examples:
+<header>
+<nav>
+<section>
+<footer>
+<article>
+
+Q5. Difference between div and span? 
+div	span
+Block element	Inline element
+Takes full width Takes required width
+
+Q6. What is the use of form tag?
+Used to collect user input. 
+Example:
+<form>
+<input type="text">
+</form>
+
+
+Q7. What are input types?
+*	text
+*	password
+*	email
+*	radio
+*	checkbox
+*	file
+*	submit
+
+Q8. Difference between id and class? 
+id	class
+Unique	Multiple elements 
+# selector . selector
+
+CSS Viva
+Q9. What is CSS?
+CSS stands for Cascading Style Sheets. 
+Used to style HTML pages.
+
+Q10. Types of CSS?
+1.	Inline CSS
+2.	Internal CSS
+3.	External CSS
+
+Q11. Difference between margin and padding? 
+Margin	Padding
+Outside border Inside border
+
+Q12. What is Flexbox?
+CSS layout model used for alignment and spacing. 
+Example:
+display:flex;
+justify-content:center; 
+align-items:center;
+
+
+Q13. What is CSS Grid?
+2D layout system for rows and columns.
+
+Q14. What is media query? 
+Used for responsive design. 
+Example:
+
+
+@media screen and (max-width:768px)
+
+Q15. What is z-index?
+Controls stack order of elements. 
+Higher z-index appears on top.
+
+Bootstrap Viva
+Q16. What is Bootstrap?
+Bootstrap is a CSS framework used to create responsive websites quickly. 
+Official website: Bootstrap
+
+Q17. What is responsive web design?
+Website automatically adjusts according to screen size.
+
+Q18. Explain Bootstrap Grid System. 
+Bootstrap uses 12-column grid system. 
+Example:
+col-md-6
+Means 6 columns on medium screens.
+
+Q19. Difference between container and container-fluid? 
+container	container-fluid
+Fixed width Full width
+
+Q20. What are Bootstrap cards?
+Flexible content containers.
+
+
+2.	JavaScript / AJAX / Local Storage Viva 
+Q21. Difference between Java and JavaScript? 
+Java	JavaScript
+Programming language Scripting language 
+Compiled	Interpreted
+
+Q22. What is JavaScript?
+Client-side scripting language used for webpage interactivity.
+
+Q23. What is DOM?
+DOM stands for Document Object Model.
+JavaScript can manipulate HTML elements using DOM.
+
+Q24. Difference between let, var, const?
+
+
+var	let	const 
+Function scope	Block scope Block scope 
+Re-declaration allowed Not allowed Not allowed
+
+Q25. What is an array? 
+Collection of elements. 
+let arr=[1,2,3];
+
+Q26. What is localStorage?
+Browser storage used to store data permanently. 
+Methods:
+localStorage.setItem() 
+localStorage.getItem()
+
+Q27. Difference between sessionStorage and localStorage? 
+sessionStorage	localStorage
+Temporary	Permanent 
+Deleted after tab close Remains stored
+
+Q28. What is AJAX?
+AJAX = Asynchronous JavaScript and XML. 
+Used to send requests without refreshing page.
+
+Q29. What are AJAX methods?
+*	GET
+*	POST
+*	PUT
+*	DELETE
+
+
+
+
+Q30. Difference between GET and POST? 
+GET	POST
+Retrieves data Sends data 
+Visible in URL Hidden
+
+3.	Git & GitHub Viva 
+Q31. What is Git?
+Git is a distributed version control system. 
+Official site: Git
+
+
+Q32. What is GitHub?
+GitHub is cloud platform for hosting Git repositories. 
+Official site: GitHub
+
+Q33. Important Git Commands?
+git init 
+git status 
+git add .
+git commit -m "message" 
+git push origin main
+git pull origin main
+
+Q34. Difference between Git and GitHub? 
+Git GitHub
+Tool Cloud platform
+
+Q35. What is repository?
+Storage location for project code.
+
+Q36. What is commit?
+Snapshot of project changes.
+
+Q37. What is branch?
+Separate development line in Git.
+
+4.	Docker Viva
+Q38. What is Docker?
+Docker is containerization platform used to package applications. 
+Official site: Docker
+
+Q39. Difference between VM and Docker? 
+VM	Docker
+Heavy	Lightweight 
+Separate OS Shares host OS
+
+Q40. What is container?
+Running instance of Docker image.
+
+Q41. What is Docker Image?
+Blueprint/template for container.
+
+
+Q42. Common Docker Commands
+docker --version 
+docker pull ubuntu 
+docker images 
+docker run ubuntu 
+docker ps
+docker stop container_id
+
+Q43. What is Dockerfile?
+Text file containing Docker instructions.
+
+5.	Angular Viva
+Q44. What is Angular?
+Angular is TypeScript-based frontend framework. 
+Official site: Angular
+
+Q45. What is TypeScript?
+Superset of JavaScript with static typing.
+
+Q46. Angular CLI commands?
+ng new appname 
+ng serve
+ng generate component login
+
+Q47. What is component in Angular?
+Building block of Angular application.
+
+
+
+Q48. What is data binding? 
+Connecting data between TS and HTML. 
+Types:
+*	Interpolation
+*	Property binding
+*	Event binding
+*	Two-way binding
+
+Q49. What is two-way binding? 
+Synchronizes data between UI and TS. 
+[(ngModel)]
+
+Q50. What is routing?
+Navigation between components/pages.
+
+
+Q51. What is service in Angular?
+Reusable logic shared across components.
+
+6.	Node.js / Express Viva 
+Q52. What is Node.js?
+Runtime environment used to run JavaScript on server. 
+Official site: Node.js
+
+Q53. Advantages of Node.js?
+*	Fast
+*	Event-driven
+*	Non-blocking
+*	Scalable
+
+Q54. What is npm?
+Node Package Manager.
+
+Q55. What is Express.js?
+Node.js framework used to build web applications and APIs. 
+Official site: Express.js
+
+Q56. What is package.json?
+Project configuration file.
+
+Q57. What is middleware?
+Function executed between request and response.
+Q58. What are CRUD operations?
+*	Create
+*	Read
+*	Update
+*	Delete
+
+Q59. REST API methods? 
+Method Operation
+GET	Read
+POST	Create
+PUT	Update 
+DELETE Delete
+
+7.	MongoDB Viva
+Q60. What is MongoDB?
+
+
+NoSQL document database. 
+Official site: MongoDB
+
+Q61. Difference between SQL and MongoDB? 
+SQL MongoDB
+Tables Collections 
+Rows Documents
+
+Q62. What is document in MongoDB?
+Data stored in JSON-like format.
+
+Q63. Common MongoDB Commands
+show dbs 
+use student
+db.createCollection("users") 
+db.users.find()
+
+8.	jQuery / jQuery Mobile Viva 
+Q64. What is jQuery?
+JavaScript library simplifying DOM operations. 
+Official site: jQuery
+
+
+
+Q65. What is jQuery Mobile? 
+Framework for mobile-friendly web apps. 
+Official site: jQuery Mobile
+
+Q66. What is selector in jQuery?
+Used to select HTML elements. 
+Example:
+$("#id")
+$(".class")
+
+Q67. Difference between JavaScript and jQuery?
+jQuery simplifies JavaScript coding.
+
+9.	AWS / EC2 / Apache Viva 
+Q68. What is Cloud Computing?
+Delivery of computing services over internet.
+
+Q69. Types of cloud?
+*	Public
+
+
+*	Private
+*	Hybrid
+
+Q70. What is AWS?
+Amazon Web Services cloud platform. 
+Official site: Amazon Web Services (AWS)
+
+Q71. What is EC2?
+Elastic Compute Cloud - virtual server service in AWS. 
+Amazon EC2
+
+Q72. What is Ubuntu?
+Linux-based operating system.
+
+Q73. What is Apache Web Server?
+Software used to host websites. 
+Official site: Apache HTTP Server
+
+
+
+
+
+Q74. Apache install commands?
+sudo apt update
+sudo apt install apache2 
+sudo systemctl start apache2
+sudo systemctl enable apache2
+
+Q75. What is public IP?
+IP accessible over internet.
+
+Q76. What is Security Group in AWS?
+Acts like firewall controlling inbound/outbound traffic.
+
+Q77. Which ports are opened for website hosting?
+*	22 ? SSH
+*	80 ? HTTP
+*	443 ? HTTPS
+
+Q78. Steps to connect EC2?
+ssh -i key.pem ubuntu@public-ip
+
+10.	Virtual Machine / Vagrant Viva
+
+
+Q79. What is Virtual Machine?
+Software-based computer system.
+
+Q80. What is hypervisor?
+Software managing virtual machines. 
+Examples:
+*	VirtualBox
+*	VMware
+
+Q81. What is Vagrant?
+Tool for automating VM setup. 
+Official site: Vagrant
+
+Q82. Vagrant Commands?
+vagrant init 
+vagrant up 
+vagrant ssh 
+vagrant halt
+
+
+Q83. Difference between VM and Container? 
+VM	Container
+Full OS Shared OS
+
+11.	Google App Engine Viva
+Q84. What is Google App Engine?
+Platform as a Service (PaaS) by Google Cloud. 
+Official site: Google App Engine
+
+Q85. Difference between IaaS, PaaS, SaaS? 
+Type Meaning
+IaaS Infrastructure 
+PaaS Platform 
+SaaS Software
+
+12.	Salesforce Viva
+Q86. What is Salesforce? 
+Cloud-based CRM platform. 
+Official site: Salesforce
+
+Q87. What is CRM?
+Customer Relationship Management.
+
+
+Q88. What is object in Salesforce?
+Database table equivalent.
+
+Q89. What is field in Salesforce?
+Column equivalent.
+
+Q90. Difference between standard and custom object? 
+Standard Custom
+Predefined User-created
+
+13.	Networking & Ports Viva 
+Q91. What is IP address?
+Unique address identifying device on network.
+
+Q92. What is localhost? 
+Refers to current machine. 
+IP:
+127.0.0.1
+
+Q94. What is HTTP?
+Protocol used for web communication.
+
+Q95. Difference between HTTP and HTTPS? 
+HTTP	HTTPS
+Not secure Secure 
+Port 80	Port 443
+
+Q96. What is DNS?
+Domain Name System converts domain to IP.
+
+14.	Important Difficult Viva Questions 
+Q97. Why Node.js is called non-blocking?
+Because it uses asynchronous event-driven architecture.
+
+Q98. Why MongoDB is called NoSQL?
+Because it stores unstructured document-based data instead of relational tables.
+
+Q99. Why Bootstrap is preferred?
+*	Faster development
+*	Responsive
+*	Predefined components
+
+
+Q100. Explain MVC architecture.
+*	Model ? Data
+*	View ? UI
+*	Controller ? Logic
+
+Q101. Difference between authentication and authorization? 
+Authentication	Authorization
+Identity verification Access control
+
+
+
+
+
+
+
+Q102. Difference between frontend and backend? 
+Frontend	Backend
+User interface Server-side logic
+
+Q103. Explain API.
+Application Programming Interface allowing communication between applications.
+
+Q104. What happens when you type URL in browser?
+1.	DNS lookup
+2.	Server request
+3.	Response sent
+4.	Browser renders page
+
+VERY IMPORTANT PRACTICAL-BASED QUESTIONS
+Q105. Why did you use Express in CRUD API?
+Because Express simplifies route handling and server creation.
+
+Q106. Why MongoDB for CRUD practical?
+Because MongoDB stores JSON-like documents which integrate well with Node.js.
+
+Q107. Why use Bootstrap in dashboard practical?
+To make webpage responsive quickly.
+
+Q108. Why use localStorage in AJAX practical?
+To store user data permanently in browser.
+
+Q109. Why use EC2 instance?
+
+
+To host application on cloud virtual server.
+
+Q110. Why use Docker?
+To ensure application runs consistently in every environment.
+
+Linux Commands Viva Table
+Command	Full Form / Syntax	Purpose
+pwd	Present Working Directory Shows current directory path
+ls	List	Lists files and folders
+cd	 Change Directory	 Changes folder/directory 
+mkdir foldername	Make Directory	Creates new folder 
+touch filename	 -	 Creates empty file
+rm filename	Remove	Deletes file
+cp source destination Copy	Copies file/folder
+mv old new	Move	Moves or renames file
+sudo command	Super User Do	Runs command as administrator 
+clear	-	 Clears terminal screen
+history	-	Shows previously executed commands
+man command	Manual	Displays help/manual of command 
+ifconfig	 Interface Configuration	Shows IP/network details
+ping website	Packet Internet Groper	Checks internet/network connectivity
+
+Package / Software Commands 
+Command	Purpose
+sudo apt update	Updates package list 
+sudo apt install apache2 Installs Apache server 
+node -v	 Shows Node.js version
+npm -v	Shows npm version
+git --version	 Shows Git version 
+python --version	Shows Python version
+
+
+
+Git Commands Viva Table 
+Command	Purpose
+git init	Initializes Git repository
+git status	Shows repository status
+git add .	Adds files to staging area
+
+
+Command	Purpose
+git commit -m "msg"	Saves changes with
+message
+git push origin main	Uploads code to GitHub
+git pull origin main	Downloads latest code 
+git clone url	 Copies repository from
+GitHub
+
+Node.js / npm Commands 
+Command	Purpose
+npm init	Creates
+package.json
+npm install express	Installs Express 
+package
+node index.js	Runs Node.js 
+application
+npm start	Starts application
+npm install	Installs all 
+dependencies
+
+Angular Commands
+Command	Purpose
+ng new appname	Creates Angular project
+ng serve	Runs Angular server
+ng generate component login	Creates new component 
+ng build	Builds Angular project
+
+
+
+
+Docker Commands
+Command	Purpose
+docker --version	Shows Docker version
+docker pull ubuntu	Downloads Docker
+image
+docker images	Lists Docker images 
+docker run ubuntu	 Runs container
+docker ps	Shows running 
+containers
+
+
+Command	Purpose
+docker stop id	Stops container
+docker build .	Builds Docker image
+
+MongoDB Commands
+Command	Purpose
+show dbs	Shows all
+databases
+use mydb	Selects
+database
+db.createCollection()	Creates 
+collection
+db.users.find()	Displays 
+documents
+db.users.insertOne()	Inserts 
+document
+db.users.updateOne()	Updates 
+document
+db.users.deleteOne()	Deletes 
+document
+
+Apache / AWS Commands
+Command	Purpose
+sudo apt install apache2	 Installs Apache 
+sudo systemctl start apache2	Starts Apache server
+sudo systemctl enable apache2 Starts Apache at boot 
+sudo systemctl status apache2 Shows Apache status 
+ssh -i key.pem ubuntu@ip	Connects EC2 instance
+
+Vagrant Commands
+Command	Purpose
+vagrant init	Initializes
+Vagrant
+Starts
+
+
+vagrant up
+
+
+v
+i
+r
+t
+u
+a
+l
+ 
+m
+a
+c
+h
+i
+n
+e
+
+
+vagrant ssh	Connects
+VM
+
+
+Command	Purpose
+vagrant halt	Stops
+VM
+
+HTTP Methods Viva Table 
+Method	Purpose
+GET	Retrieve data
+POST	Send/Create 
+data
+PUT	 Update data 
+DELETE	Delete data
+
+
+Important Port Numbers 
+Port	Service
+20/21	FTP
+22	SSH
+23	Telnet
+25	SMTP
+53	DNS
+67/68	DHCP
+80	HTTP
+110	POP3
+143	IMAP
+443	HTTPS
+3306	MySQL
+27017	MongoDB
+
+Why key pair is used in EC2?
+For secure SSH login authentication.
+
+Why security groups are important?
+They act as firewall.
+
+What is inbound rule?
+Incoming traffic rules.
+
+Why open port 22?
+For SSH connection.
+
+
+Why open port 80?
+For website hosting.
+
+Virtualization Concepts 
+Questions:
+What is hypervisor?
+Software managing virtual machines. 
+Types:
+*	Type 1
+   *	Type 2 
+Examples:
+*	VMware
+*	VirtualBox
