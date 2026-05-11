@@ -1,0 +1,161 @@
+Practical: Creating an EC2 Instance and Setting up Apache Web Server 
+Aim 
+To create a virtual server using Amazon Web Services EC2 and configure an Apache Web Server 
+to host a web page. 
+Theory (Basic Understanding) 
+? EC2 (Elastic Compute Cloud): 
+    A service provided by AWS that allows users to launch virtual servers (instances) in the cloud. 
+? Apache Web Server (httpd): 
+A widely used open-source software used to host websites. 
+? Security Group: 
+Acts as a firewall that controls incoming and outgoing traffic to the instance. 
+? Key Pair: 
+A secure login method used to connect to the EC2 instance. 
+Prerequisites 
+? AWS Account (Free Tier) 
+? Internet Connection 
+? Basic browser knowledge 
+Step 1: Login to AWS 
+Open: 
+AWS Console 
+Login using your AWS account. 
+Step 2: Open EC2 Service 
+In AWS search bar type: 
+EC2 
+Click: 
+EC2
+
+
+Step 3: Launch EC2 Instance 
+Click: 
+Launch Instance 
+Step 4: Configure EC2 Instance 
+4.1 Name 
+Enter: 
+ApacheServer 
+4.2 Select Ubuntu Image 
+Choose: 
+Ubuntu Server 24.04 LTS 
+(Free Tier Eligible) 
+4.3 Choose Instance Type 
+Select: 
+T2.micro OR t3.micro 
+(Free Tier Eligible) 
+4.4 Create Key Pair 
+Click: 
+Create new key pair 
+Enter: 
+apache-key 
+Choose: 
+? Type = RSA 
+? Format = .pem 
+Click: 
+Create key pair
+.pem file will download automatically. 
+4.5 Configure Network Settings 
+Click: 
+Edit 
+Enable: 
+? Allow SSH traffic 
+? Allow HTTP traffic 
+Step 5: Launch Instance 
+Click: 
+Launch Instance 
+Wait until instance state becomes: 
+Running 
+Step 6: Connect to EC2 Instance 
+6.1 Select Instance 
+Tick/select your instance. 
+Click: 
+Connect 
+6.2 Use EC2 Instance Connect 
+Choose tab: 
+EC2 Instance Connect 
+Click: 
+Connect 
+A browser terminal will open.
+Step 7: Update Ubuntu Packages 
+Run: 
+sudo apt update 
+Wait for completion. 
+Step 8: Install Apache Web Server 
+Run: 
+sudo apt install apache2 -y 
+Wait for installation to complete. 
+Step 9: Start Apache Service 
+Run: 
+sudo systemctl start apache2 
+Step 10: Enable Apache Service 
+Run: 
+sudo systemctl enable apache2 
+Purpose: 
+Apache automatically starts whenever EC2 restarts. 
+Step 11: Verify Apache Installation 
+Go to EC2 Dashboard. 
+Copy: 
+Public IPv4 Address 
+Example: 
+13.xx.xx.xx 
+Open browser: 
+http://PUBLIC_IP
+Example: 
+http://13.xx.xx.xx 
+You should see: 
+Apache2 Ubuntu Default Page 
+This confirms Apache server is running successfully. 
+Step 12: Create Custom Web Page 
+Go back to EC2 terminal. 
+Run: 
+cd /var/www/html 
+Step 13: Edit index.html File 
+Run: 
+sudo nano index.html 
+Delete existing content. 
+Paste: 
+<html> 
+<head> 
+<title>My Website</title> 
+</head> 
+<body> 
+<h1>Hello from AWS EC2 ??</h1> 
+<p>Apache Web Server Successfully Configured</p> 
+</body> 
+</html> 
+Step 14: Save File 
+Press: 
+CTRL + X 
+Then press: 
+Y 
+Then press:
+Enter 
+Step 15: Refresh Browser 
+Refresh: 
+http://PUBLIC_IP 
+Your custom webpage will appear. 
+Common Errors & Solutions 
+Problem Reason Solution 
+
+
+Website not opening 
+HTTP not enabled Allow port 
+80 
+
+
+Connection failed Instance stopped Start instance Blank 
+page Apache not running Start httpd Permission error 
+Wrong commands Use sudo 
+Viva Questions 
+Q1. What is EC2? 
+EC2 is a cloud service that provides virtual servers. 
+Q2. What is Apache? 
+Apache is a web server used to host websites. 
+Q3. What is a Security Group? 
+A firewall that controls traffic. 
+Q4. What is Key Pair? 
+Used for secure login to EC2. 
+Q5. What is the default Apache folder in Ubuntu? 
+/var/www/html 
+Q6. Which port does apache use? 
+Port 80 
+Q7. Why allow HTTP traffic in Security Group? To allow users 
+to access the website publicly through browser.

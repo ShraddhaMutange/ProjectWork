@@ -1,0 +1,128 @@
+Preparation before Step 1 : 
+If Node.js and MongoDB is not installed
+1. Install & Check Node.js
+Step 1: Install
+Go to: 
+ https://nodejs.org
+?	Download LTS (recommended version)
+?	Install normally (Next ? Next ? Finish)
+ 
+Step 2: Check if installed
+Open terminal / command prompt and run:
+node -v
+Expected output:
+v18.x.x  (or similar)
+Now check npm:
+npm -v
+Example:
+9.x.x
+ 
+ If not working:
+?	Restart your system
+?	Or reinstall Node.js
+ 
+2. Install & Check MongoDB
+Step 1: Install MongoDB
+Go to: 
+ https://www.mongodb.com/try/download/community
+?	Choose:
+?	Version: Latest
+?	OS: Your system
+?	Package: MSI (Windows) / dmg (Mac)
+During installation: 
+ ? Select “Complete” 
+ ? ? IMPORTANT: Tick “Install MongoDB as a Service”
+ 
+Step 2: Start MongoDB
+Open terminal and run:
+mongod
+If it runs successfully, you’ll see:
+waiting for connections on port 27017
+ 
+ Step 3: Check MongoDB client
+Open another terminal:
+mongo
+OR (new versions):
+mongosh
+If it opens ? MongoDB is working 
+
+
+
+
+
+Run : 
+node -v
+npm -v
+mongod
+mongosh
+Step 1: Install Required Software
+Make sure you have:
+?	Node.js
+?	MongoDB
+ 
+Step 2: Create Project Folder
+mkdir crud-api
+cd crud-api
+ 
+Step 3: Initialize Node Project
+npm init -y
+ 
+Step 4: Install Packages
+npm install express mongoose
+ 
+Step 5: Create Files
+Create:
+crud-api/
+?
+??? server.js
+??? models/
+   ??? User.js
+ 
+Step 6: Create User Model
+?? models/User.js
+const mongoose = require('mongoose');
+
+const userSchema = new mongoose.Schema({
+   name: String,
+   age: Number
+});
+
+module.exports = mongoose.model('User', userSchema);
+ 
+Step 7: Paste Your Given Code
+?? server.js
+?? Paste the exact code you were given
+ 
+Step 8: Start MongoDB
+mongod
+ 
+Step 9: Run Server
+node server.js
+?? Output:
+MongoDB Connected
+Server running on port 3000
+ 
+Step 10: Test APIs
+Use:
+?	Postman (best) : https://web.postman.co
+?	OR browser (only GET works)
+ 
+Test CREATE
+POST ? http://localhost:3000/users
+Body:
+{
+ "name": "Nidhi",
+ "age": 21
+}
+ 
+Test READ
+GET ? http://localhost:3000/users
+ 
+
+Test UPDATE
+PUT ? http://localhost:3000/users/<id>
+ 
+Test DELETE
+DELETE ? http://localhost:3000/users/<id>
+ 
+

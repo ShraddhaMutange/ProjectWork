@@ -1,0 +1,479 @@
+SALESFORCE PRACTICAL CHEAT SHEET
+Rental Property Management System (SPPU TE IT CC)
+
+PART 1 — LOGIN
+Step 1
+Open: 
+Salesforce Login 
+Login using:
+*	Username
+*	Password
+
+PART 2 — CREATE LIGHTNING APP
+Step 2
+Click:
+Setup (Gear Icon)
+
+Step 3
+Search:
+App Manager 
+Open:
+App Manager
+
+Step 4
+Click:
+New Lightning App
+
+Step 5
+Fill:
+Field	Value
+App Name Rental Property Management 
+Click:
+Next
+Keep clicking: 
+Next
+Until:
+Save C Finish
+
+PART 3 — CREATE PROPERTY OBJECT
+Step 6
+Go to:
+
+
+Setup ? Object Manager
+
+Step 7
+Click:
+Create ? Custom Object
+
+Step 8
+Fill:
+Field	Value
+Label	Property 
+Plural Label	Properties 
+Object Name Property
+Record Name Property Name 
+Tick:
+Allow Reports
+Allow Search 
+Click:
+Save
+
+PART 4 — CREATE PROPERTY FIELDS
+Step G
+Open:
+Property ? Fields C Relationships 
+Click:
+New
+
+FIELD 1 — Property ID 
+Step 10
+Datatype:
+Auto Number 
+Click:
+Next 
+Fill:
+Field	Value
+Field Label Property ID 
+Display Format PRO-{0000} 
+Starting Number 1
+Click:
+Next ? Save
+
+
+ 
+FIELD 2 — Property Type 
+Step 11
+Click: 
+New 
+Datatype: 
+Picklist 
+Next.
+Field Label: 
+Property Type 
+Values: 
+House
+Flat 
+Apartment 
+Villa
+Save.
+
+FIELD 3 — Address 
+Step 12
+New ? 
+Datatype: 
+Text Area 
+Field Label: 
+Address 
+Save.
+
+FIELD 4 — Rent Amount 
+Step 13
+New ? 
+Datatype: 
+Currency 
+Field Label: 
+Rent Amount 
+Save.
+
+FIELD 5 — Status 
+Step 14
+New ? 
+Datatype: 
+Picklist 
+Field Label:
+
+
+Status 
+Values: 
+Available 
+Rented 
+Save.
+
+PART 5 — CREATE TENANT OBJECT
+Step 15
+Go to:
+Setup ? Object Manager
+
+Step 16
+Click:
+Create ? Custom Object
+
+Step 17
+Fill:
+Field	Value
+Label	Tenant 
+Plural Label	Tenants 
+Object Name Tenant
+Record Name Tenant Name 
+Length:
+50
+Tick:
+Allow Reports 
+Allow Search 
+Click:
+Save
+
+PART 6 — CREATE TENANT FIELDS
+Step 18
+Open:
+Tenant ? Fields C Relationships
+
+FIELD 1 — Tenant ID 
+Step 1G
+Click: 
+New 
+Datatype:
+
+
+Auto Number 
+Field Label: 
+Tenant ID 
+Display Format: 
+TEN-{0000}
+Starting Number: 
+1
+Save.
+
+FIELD 2 — Phone Number 
+Step 20
+New ? 
+Datatype: 
+Phone 
+Field Label:
+Phone Number 
+Save.
+
+FIELD 3 — Email 
+Step 21
+New ? 
+Datatype: 
+Email
+Field Label: 
+Email 
+Save.
+
+FIELD 4 — Move In Date 
+Step 22
+New ? 
+Datatype: 
+Date
+Field Label: 
+Move In Date 
+Save.
+
+FIELD 5 — Property Relationship 
+Step 23
+New ? 
+Datatype:
+Lookup Relationship
+
+
+Next. 
+Related To: 
+Property
+Next ? Next ? Save.
+
+PART 7 — CREATE TABS
+Step 24
+Go to:
+Setup ? Tabs
+
+PROPERTY TAB
+Step 25
+Under:
+Custom Object Tabs 
+Click:
+New 
+Choose: 
+Property
+Select any tab style. 
+Next ? Next ? Save.
+
+TENANT TAB
+Step 26 
+Again: 
+New 
+Choose: 
+Tenant
+Select style. 
+Save.
+
+PART 8 — ADD PROPERTY RECORDS
+Step 27 
+Exit setup. 
+Click:
+App Launcher (9 dots) 
+Search:
+Properties 
+Open: 
+Properties
+
+Step 28
+
+
+Click: 
+New
+
+PROPERTY RECORD 1
+Field	Value 
+Property Name Green Villa 
+Property Type	Villa 
+Address	Pune
+Rent Amount		25000 
+Status	Available 
+Save.
+
+PROPERTY RECORD 2
+Field	Value
+Property Name Royal Residency 
+Property Type	Flat
+Address		Mumbai 
+Rent Amount	18000 
+Status	Rented 
+Save.
+
+PROPERTY RECORD 3
+Field	Value 
+Property Name Ocean Heights 
+Property Type	Apartment 
+Address	Nashik
+Rent Amount		22000 
+Status	Available 
+Save.
+
+PROPERTY RECORD 4
+Field	Value 
+Property Name Sunshine Villa 
+Property Type	Villa
+Address	Pune 
+Rent Amount	30000
+
+
+Field	Value
+Status	Rented 
+Save.
+
+PART G — ADD TENANT RECORDS
+Step 2G 
+Open: 
+Tenants 
+Click: 
+New
+
+TENANT RECORD 1
+Field	Value
+Tenant Name		Rahul Sharma 
+Phone Number 9876543210 
+Email	rahul@gmail.com 
+Move In Date	10/05/2026 
+Property	Ocean Heights 
+Save.
+
+TENANT RECORD 2
+Field	Value 
+Tenant Name	Priya Mehta 
+Phone Number 9876501234
+Email		priya@gmail.com 
+Move In Date	15/04/2026 
+Property	Royal Residency 
+Save.
+
+TENANT RECORD 3
+Field	Value 
+Tenant Name	Amit Patil 
+Phone Number 9988776655
+Email	amit@gmail.com 
+Move In Date	01/03/2026 
+Property	Green Villa
+Save.
+
+
+ 
+TENANT RECORD 4
+Field	Value 
+Tenant Name	Neha Joshi 
+Phone Number 9765432109
+Email		neha@gmail.com 
+Move In Date	20/02/2026 
+Property	Sunshine Villa 
+Save.
+
+PART 10 — CREATE REPORTS
+Step 30 
+Open: 
+Reports 
+Click:
+New Report
+
+REPORT 1 — Available Properties 
+Step 31
+Choose: 
+Properties 
+Click:
+Start Report
+
+Step 32
+Filter:
+Status = Available
+
+Step 33
+Click:
+Save C Run 
+Report Name:
+Available Properties Report 
+Save.
+
+REPORT 2 — Rented Properties 
+Step 34
+New Report ? 
+Choose: 
+Properties
+
+
+Filter:
+Status = Rented 
+Save Name:
+Rented Properties Report 
+Save.
+
+REPORT 3 — Tenant Details 
+Step 35
+New Report ? 
+Choose:
+Tenants with Property 
+Start Report.
+
+Step 36
+Keep columns:
+*	Tenant Name
+*	Phone Number
+*	Email
+*	Move In Date
+*	Property
+
+Step 37
+Save Name:
+Tenant Details Report 
+Save.
+
+PART 11 — CREATE DASHBOARD
+Step 38 
+Open: 
+Dashboards 
+Click:
+New Dashboard
+
+Step 3G
+Dashboard Name:
+Rental Property Dashboard 
+Click:
+Create
+
+WIDGET 1
+Step 40
+
+
+Click:
++ Widget 
+Choose:
+Available Properties Report 
+Chart:
+Metric 
+Add.
+
+WIDGET 2
+Step 41
+Click:
++ Widget 
+Choose:
+Rented Properties Report 
+Chart:
+Pie Chart 
+Add.
+
+WIDGET 3
+Step 42
+Click:
++ Widget 
+Choose:
+Tenant Details Report 
+Chart:
+Table 
+Add.
+
+WIDGET 4 — PROPERTY STATUS
+Step 43
+Create report grouped by: 
+Status
+Save:
+Property Status Report 
+Add widget:
+Pie Chart
+
+WIDGET 5 — PROPERTY TYPE
+Step 44
+Create report grouped by: 
+Property Type
+
+
+Save:
+Property Type Report 
+Add widget:
+Bar Chart
+
+Step 45 
+Click: 
+Save 
+Then: 
+Done
+
+VIVA POINTS
+?uestion	Answer
+What is Salesforce?	Cloud CRM platform
+What is CRM?	Customer Relationship Management 
+Which relationship used? Lookup Relationship
+Why lookup?	Tenant can exist independently
+Why   c?	Indicates custom object
+What is Picklist?	Dropdown field
+What is Auto Number?	System-generated unique value

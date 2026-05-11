@@ -1,0 +1,296 @@
+OPEN COMMAND PROMPT 
+node -v  
+npm -v  
+(install node.js if not already installed)  
+ng version  
+npm install -g @angular/cli (run ONLY if angular not installed then check again ng  
+version)  
+git –version (CHECK THIS and download if not present)  
+mongosh  
+(check MongoDB)  
+If not installed:  
+Download MongoDB Community Server:  
+MongoDB Download 
+Download MongoDB Shell:  
+MongoDB Shell Download 
+cd Desktop  
+ng new folder-name (eg: ng new auth-project)  
+Choose:  
+? Routing ? Yes  
+? Stylesheet ? CSS  
+? SSR/SSG ? No !!!  
+cd auth-project  
+ng serve  
+open browser- http://localhost:4200 
+**Then back to command prompt-> stop server (ctrl+C)**  
+//generate components in the project folder  
+ng g c register (instead of g c can also write generate 
+component)  ng g c login  
+ng g c profile  
+//start server again  
+ng serve 
+IN VS CODE 
+src/app/app.routes.ts  
+import { Routes } from '@angular/router';  
+import { Register } from './register/register';  
+import { Login } from './login/login';  
+import { Profile } from './profile/profile';  
+export const routes: Routes = [  
+ { path: 'register', component: Register },  
+ { path: 'login', component: Login },  
+ { path: 'profile', component: Profile },  
+ { path: '', redirectTo: 'login', pathMatch: 'full' }  
+];  
+src/app/app.html  
+<h1>User Authentication App</h1>  
+<nav>  
+ <a routerLink="/register">Register</a> |  
+ <a routerLink="/login">Login</a> |  
+ <a routerLink="/profile">Profile</a>  
+</nav>  
+<hr>  
+<router-outlet></router-outlet>  
+src/app/app.ts  
+import { Component } from '@angular/core';  
+import { RouterLink, RouterOutlet } from '@angular/router';  
+@Component({  
+ selector: 'app-root',  
+ imports: [RouterLink, RouterOutlet],  
+ templateUrl: './app.html',  
+ styleUrl: './app.css'  
+})  
+export class App {  
+} 
+src/app/register/register.ts  
+import { Component } from '@angular/core';  
+import { FormsModule } from '@angular/forms';  
+import { Router } from '@angular/router';  
+@Component({  
+ selector: 'app-register',  
+ imports: [FormsModule],  
+ templateUrl: './register.html',  
+ styleUrl: './register.css'  
+})  
+export class Register {  
+ name = '';  
+ email = '';  
+ password = '';  
+ constructor(private router: Router) {}  
+ registerUser() {  
+ const user = {  
+ name: this.name,  
+ email: this.email,  
+ password: this.password  
+ };  
+ localStorage.setItem('user', JSON.stringify(user));   
+alert('Registration Successful');  
+ this.router.navigate(['/login']);  
+ }  
+}  
+src/app/register/register.html  
+<h2>Register User</h2>  
+<form (ngSubmit)="registerUser()"> 
+ <label>Name:</label><br>  
+ <input type="text" [(ngModel)]="name" name="name"><br><br>  
+ <label>Email:</label><br>  
+ <input type="email" [(ngModel)]="email" name="email"><br><br>  
+ <label>Password:</label><br>  
+ <input type="password" [(ngModel)]="password" name="password"><br><br>   
+<button type="submit">Register</button>  
+</form>  
+src/app/login/login.ts  
+import { Component } from '@angular/core';  
+import { FormsModule } from '@angular/forms';  
+import { Router } from '@angular/router';  
+@Component({  
+ selector: 'app-login',  
+ imports: [FormsModule],  
+ templateUrl: './login.html',  
+ styleUrl: './login.css'  
+})  
+export class Login {  
+ email = '';  
+ password = '';  
+ constructor(private router: Router) {}  
+ loginUser() {  
+ const storedUser = JSON.parse(localStorage.getItem('user') || '{}');  
+ if (  
+ this.email === storedUser.email &&  
+ this.password === storedUser.password  
+ ) { 
+ alert('Login Successful');  
+ this.router.navigate(['/profile']);  
+ } else {  
+ alert('Invalid Email or Password');  
+ }  
+ }  
+}  
+src/app/login/login.html  
+<h2>Login User</h2>  
+<form (ngSubmit)="loginUser()">  
+ <label>Email:</label><br>  
+ <input type="email" [(ngModel)]="email" name="email"><br><br>  
+ <label>Password:</label><br>  
+ <input type="password" [(ngModel)]="password" name="password"><br><br>   
+<button type="submit">Login</button>  
+</form>  
+src/app/profile/profile.ts  
+import { Component, OnInit } from '@angular/core';  
+@Component({  
+ selector: 'app-profile',  
+ imports: [],  
+ templateUrl: './profile.html',  
+ styleUrl: './profile.css'  
+})  
+export class Profile implements OnInit {  
+ user: any = {}; 
+ ngOnInit(): void {  
+ const storedUser = localStorage.getItem('user');  
+ if (storedUser) {  
+ this.user = JSON.parse(storedUser);  
+ }  
+ }  
+}  
+src/app/profile/profile.html  
+<div class="profile-card">  
+ <h2>User Profile</h2>  
+ <p><strong>Name:</strong> {{ user.name 
+}}</p>   <p><strong>Email:</strong> {{ 
+user.email }}</p>  </div>  
+src/styles.css  
+* {  
+ margin: 0;  
+ padding: 0;  
+ box-sizing: border-box;  
+}  
+body {  
+ font-family: 'Segoe UI', sans-serif;  
+ min-height: 100vh;  
+ background: linear-gradient(135deg, #f7a8b8, 
+#6c8?8);  display: flex;  
+ justify-content: center;  
+ align-items: center;  
+ overflow-x: hidden;  
+}  
+app-root { 
+ width: 100%;  
+}  
+/* MAIN TITLE */  
+h1 {  
+ text-align: center;  
+ color: white;  
+ margin-bottom: 22px;  
+ font-size: 52px;  
+ font-weight: bold;  
+ text-transform: uppercase;  
+ letter-spacing: 3px;  
+ text-shadow: 0 4px 10px 
+rgba(0,0,0,0.2);  }  
+/* NAVIGATION BAR */  
+nav {  
+ width: fit-content;  
+ margin: 0 auto 28px auto;  
+ padding: 16px 34px;  
+ border-radius: 20px;  
+ background: rgba(255,255,255,0.15);   
+backdrop-filter: blur(15px);  
+ border: 1px solid rgba(255,255,255,0.3);   
+box-shadow: 0 8px 30px rgba(0,0,0,0.15);  
+}  
+nav a {  
+ text-decoration: none;  
+ color: white;  
+ margin: 0 18px;  
+ font-size: 18px;  
+ font-weight: 600;  
+ padding: 10px 18px;  
+ border-radius: 12px;  
+ transition: 0.3s;  
+}  
+nav a:hover { 
+ background: rgba(255,255,255,0.2);   
+color: white;  
+}  
+/* FORM + PROFILE CARD */  
+form,  
+.profile-card {  
+ width: 560px;  
+ margin: auto;  
+ padding: 30px 45px;  
+ border-radius: 28px;  
+ background: rgba(255,255,255,0.18);   
+backdrop-filter: blur(15px);  
+ border: 1px solid rgba(255,255,255,0.25);   
+box-shadow: 0 10px 35px rgba(0,0,0,0.18);  
+}  
+/* PAGE HEADINGS */  
+h2 {  
+ text-align: center;  
+ color: white;  
+ font-size: 34px;  
+ margin-bottom: 22px;  
+ font-weight: bold;  
+}  
+/* LABELS */  
+label {  
+ color: white;  
+ font-size: 17px;  
+ font-weight: 600;  
+}  
+/* INPUTS */  
+input {  
+ width: 100%;  
+ padding: 14px; 
+ margin-top: 8px;  
+ margin-bottom: 18px;  
+ border: none;  
+ border-radius: 14px;  
+ background: rgba(255,255,255,0.25);  
+ color: white;  
+ font-size: 16px;  
+ transition: 0.3s;  
+}  
+input::placeholder {  
+ color: #f1f5f9;  
+}  
+input:focus {  
+ outline: none;  
+ border: 2px solid rgba(255,255,255,0.8);  
+ background: rgba(255,255,255,0.3);  
+}  
+/* BUTTON */  
+button {  
+ width: 100%;  
+ padding: 15px;  
+ border: none;  
+ border-radius: 15px;  
+ background: linear-gradient(to right, #?7eb3, 
+#5b86?);  color: white;  
+ font-size: 18px;  
+ font-weight: bold;  
+ cursor: pointer;  
+ transition: 0.3s;  
+ margin-top: 5px;  
+ box-shadow: 0 4px 15px rgba(0,0,0,0.2);  
+}  
+button:hover {  
+ transform: translateY(-2px);  
+ opacity: 0.95;  
+} 
+/* PROFILE DETAILS */  
+p {  
+ color: white;  
+ font-size: 20px;  
+ margin: 18px 0;  
+}  
+strong {  
+ color: #???; 
+}  
+/* REMOVE LINE */  
+hr {  
+ display: none;  
+}  
+**Save all files then go to terminal again**  
+ng serve  
+//open browser- http://localhost:4200 
+Google Cloud Deployment: 
